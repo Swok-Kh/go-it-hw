@@ -5,7 +5,7 @@ import { Date } from 'core-js';
 
 const countdownTimer = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Dec 18, 2020'),
+  targetDate: new Date('Dec 18, 2021'),
 });
 
 const date = new Date();
