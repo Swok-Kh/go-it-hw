@@ -1,0 +1,52 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  transition: background-color 250ms var(--timing-function);
+}
+.container {
+  margin: 40px auto;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.button {
+  padding: 20px 40px;
+  min-width: 200px;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 2px solid rgb(187, 187, 187);
+  outline: none;
+  transition: background-color 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
+}
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:focus {
+  background-color: rgb(116, 116, 116);
+  color: rgba(0, 0, 0, 0.555);
+}
+.button--start {
+  background-color: rgba(0, 145, 77, 0.753);
+}
+.button--start:hover,
+.button--start:focus {
+  background-color: rgba(0, 80, 44, 0.678);
+}
+.button--stop {
+  background-color: rgba(173, 0, 0, 0.589);
+}
+.button--stop:hover,
+.button--stop:focus {
+  background-color: rgba(90, 0, 0, 0.589);
+}
