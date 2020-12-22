@@ -1,0 +1,45 @@
+{{#each this}}
+<li class="gallery__item">
+    <div class="photo-card" data-full-size-image={{largeImageURL}} data-page-url="{{pageURL}}">
+        <div class="photo-card__img-box preloader">
+            <img src="{{webformatURL}}" alt="{{tags}}" />
+            <div class="loading">
+                <div class="sector sector1"></div>
+                <div class="sector sector2"></div>
+                <div class="sector sector4"></div>
+                <div class="sector sector3"></div>
+            </div>
+        </div>
+        <div class="photo-card__footer">
+            <div class="stats">
+                <p class="stats__item">
+                    <i class="material-icons">thumb_up</i>
+                    {{likes}}
+                </p>
+                <p class="stats__item">
+                    <i class="material-icons">visibility</i>
+                    {{views}}
+                </p>
+                <p class="stats__item">
+                    <i class="material-icons">comment</i>
+                    {{comments}}
+                </p>
+                <p class="stats__item">
+                    <i class="material-icons">cloud_download</i>
+                    {{downloads}}
+                </p>
+            </div>
+            <div>
+                <ul class="tags-list">
+                    {{#each tags}}
+                    <li class="tags-list__item" data-tag>{{{this}}}</li>
+                    {{/each}}
+                </ul>
+                <a class="photo-card__link" href="{{pageURL}}" target="_blank" rel="noopener"><i
+                        class="material-icons">arrow_downward</i>
+                    Download from Pixabay</a>
+            </div>
+        </div>
+    </div>
+</li>
+{{/each}}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="goit-js-hw-13-image-finder" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>goit-js-hw-13-image-finder</title>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="container header">
+        <a
+          class="pixabay-link"
+          href="https://pixabay.com/"
+          target="_blank"
+          rel="noopener"
+          >Images from
+          <img src="./images/pixabay-logo.png" alt="Pixabay" />
+        </a>
+        <form class="search-form" id="search-form">
+          <input
+            class="search-form__input"
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+        </form>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="gallery"></ul>
+      <div class="gallery-santinel"></div>
+    </div>
+    <div class="lightbox-controls lightbox-controls--hidden">
+      <a
+        class="lightbox-controls__link"
+        href="/"
+        alt="Pixabay"
+        target="_blank"
+        rel="noopener"
+        ><i class="material-icons">arrow_downward</i> Download
+      </a>
+      <button class="lightbox-controls__close">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <button class="scroll-up">
+      <i class="material-icons">keyboard_arrow_up</i>
+    </button>
+    <div class="full-size-preloader full-size-preloader--hidden">
+      <div class="loading">
+        <div class="sector sector1"></div>
+        <div class="sector sector2"></div>
+        <div class="sector sector4"></div>
+        <div class="sector sector3"></div>
+      </div>
+    </div>
+  </body>
+</html>

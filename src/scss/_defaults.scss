@@ -1,0 +1,115 @@
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$main-background-color: rgba(243, 243, 243, 0.356);
+$main-color: rgb(54, 54, 54);
+
+$accent-color: #4d81c6;
+
+$box-shadow: 4px 4px 5px 0 rgba(115, 115, 115, 0.39);
+$accent-box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.507);
+
+$loading-sector-color1: #4f84c9;
+$loading-sector-color2: rgb(153, 204, 255);
+$loading-sector-color3: #43566e;
+$loading-sector-color4: #a36cb9;
+
+$header-background-color: #4d81c6;
+$header-accent-color: rgb(153, 204, 255);
+$header-text-color: #f2f2f1;
+$mobile: 479px;
+$tablet: 767px;
+$big-tablet: 991px;
+$desktop: 1280px;
+
+$font-small-mobile: 14px;
+$font-mobile: 16px;
+$font-tablet: 16px;
+$font-big-tablet: 18px;
+$font-desktop: 20px;
+
+%font {
+  font-size: $font-small-mobile;
+  @media screen and (min-width: $mobile) {
+    font-size: $font-mobile;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: $font-tablet;
+  }
+  @media screen and (min-width: $big-tablet) {
+    font-size: $font-big-tablet;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: $font-desktop;
+  }
+}
+%reset-list-style {
+  list-style: none;
+}
+%reset-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+%button {
+  position: fixed;
+  background-color: $main-background-color;
+  color: currentColor;
+  border: 2px solid currentColor;
+  outline: none;
+  padding: 10px;
+  border-radius: 50%;
+  transition: opacity 250ms $timing-function, color 250ms $timing-function,
+    transform 250ms $timing-function;
+  & i {
+    display: block;
+  }
+  &:hover,
+  &:focus {
+    transform: rotate(360deg) scale(1.2);
+    color: $accent-color;
+  }
+}
+
+body {
+  @extend %font;
+  color: $main-color;
+  background-color: $main-background-color;
+  scroll-behavior: smooth;
+  :focus {
+    outline: none;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  @extend %font;
+  padding: 0;
+  margin: 0;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 1600px;
+}
+.scroll-up {
+  @extend %button;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
