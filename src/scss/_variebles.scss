@@ -1,0 +1,38 @@
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$main-background-color: rgba(243, 243, 243, 0.356);
+$main-color: rgb(54, 54, 54);
+$accent-color: rgba(138, 138, 138, 0.76);
+$box-shadow: 10px 5px 68px 0 rgba(115, 115, 115, 0.39);
+$accent-box-shadow: 10px 5px 38px 0 rgba(115, 115, 115, 0.39);
+$header-background-color: #4d81c6;
+$header-accent-color: rgb(153, 204, 255);
+$header-text-color: #f2f2f1;
+$mobile: 479px;
+$tablet: 767px;
+$big-tablet: 991px;
+$desktop: 1280px;
+
+$font-small-mobile: 14px;
+$font-mobile: 16px;
+$font-tablet: 16px;
+$font-big-tablet: 18px;
+$font-desktop: 22px;
+
+%font {
+  font-size: $font-small-mobile;
+  @media screen and (min-width: $mobile) {
+    font-size: $font-mobile;
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: $font-tablet;
+  }
+  @media screen and (min-width: $big-tablet) {
+    font-size: $font-big-tablet;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: $font-desktop;
+  }
+}
+%reset-list-style {
+  list-style: none;
+}

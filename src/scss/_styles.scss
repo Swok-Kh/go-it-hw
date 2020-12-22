@@ -1,0 +1,230 @@
+body {
+  @extend %font;
+  color: $main-color;
+  background-color: $main-background-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  @extend %font;
+  padding: 0;
+  margin: 0;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 1600px;
+}
+.header-wrapper {
+  background: $header-background-color;
+}
+.search-panel {
+  height: 18vh;
+  @media screen and (min-width: $tablet) {
+    height: 12vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__input {
+    display: block;
+    color: $header-text-color;
+    padding: 5px;
+    border: 2px solid $header-accent-color;
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    background-color: $header-background-color;
+    transition: border-color 250ms $timing-function,
+      box-shadow 250ms $timing-function;
+    &:hover,
+    &:focus {
+      border-color: $header-text-color;
+    }
+    @media screen and (min-width: $tablet) {
+      padding: 10px;
+      width: 50%;
+    }
+  }
+}
+.weather {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: $header-accent-color;
+  @media screen and (min-width: $tablet) {
+    width: 50%;
+  }
+  &__city {
+    font-style: italic;
+  }
+  &__temp-fahrenheit,
+  &__temp-celsius,
+  &__humidity,
+  &__pressure,
+  &__wind {
+    color: $header-text-color;
+    font-style: italic;
+    transition: opacity 250ms $timing-function;
+  }
+  &__image {
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: transform 250ms $timing-function;
+    @media screen and (min-width: $tablet) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  &__wind-deg {
+    display: inline-block;
+    padding: 2px;
+    color: $header-text-color;
+    transition: transform 250ms $timing-function;
+  }
+}
+.countries {
+  &__view {
+    opacity: 0;
+    transform: scale3D(0.8, 0.5, 1);
+    transition: opacity 200ms $timing-function, transform 200ms $timing-function;
+    &--show {
+      opacity: 1;
+      transform: scale3D(1, 1, 1);
+    }
+    @media screen and (min-width: $tablet) {
+      height: 44vh;
+    }
+  }
+  &__list {
+    @extend %reset-list-style;
+    @media screen and (min-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+    & li {
+      position: relative;
+      width: 100%;
+      padding: 5px 20px 5px 10px;
+      box-shadow: $box-shadow;
+      cursor: pointer;
+      transition: box-shadow 250ms $timing-function;
+      &:hover {
+        box-shadow: $accent-box-shadow;
+      }
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      @media screen and (min-width: $tablet) {
+        width: calc(50% - 20px);
+        margin: 10px;
+        padding: 10px 40px 10px 20px;
+      }
+    }
+  }
+  &__flag {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 2%;
+    width: $font-small-mobile;
+    transform: translateY(-50%);
+    @media screen and (min-width: $tablet) {
+      width: $font-tablet;
+    }
+    @media screen and (min-width: $desktop) {
+      width: $font-desktop;
+    }
+  }
+}
+.country {
+  &__description {
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+      padding-right: 10px;
+    }
+  }
+  &__name {
+    font-size: $font-small-mobile + 4px;
+    @media screen and (min-width: $mobile) {
+      font-size: $font-mobile + 4px;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: $font-tablet + 4px;
+    }
+    @media screen and (min-width: $big-tablet) {
+      font-size: $font-big-tablet + 4px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: $font-desktop + 4px;
+    }
+  }
+  &__name,
+  &__native-name,
+  &__capital,
+  &__population,
+  &__languages-list {
+    margin-bottom: 10px;
+  }
+  &__native-name {
+    font-style: italic;
+    color: $accent-color;
+  }
+  &__flag img {
+    height: 100%;
+  }
+  &__languages-list {
+    @extend %reset-list-style;
+    @media screen and (min-width: $tablet) {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 80%;
+      & li {
+        margin-right: 10px;
+      }
+    }
+  }
+  @media screen and (max-width: $tablet - 1) {
+    text-align: center;
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__flag {
+      overflow: hidden;
+      width: 50%;
+      height: 45vh;
+    }
+    &__description {
+      text-align: right;
+    }
+  }
+}
+#map {
+  height: 50vh;
+  margin-top: 20px;
+  box-shadow: $box-shadow;
+  @media screen and (min-width: $tablet) {
+    height: 38vh;
+  }
+}

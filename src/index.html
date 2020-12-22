@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="goit-js-hw-12-countries" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>goit-js-hw-12-countries</title>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="container search-panel">
+        <div class="weather">
+          <div>
+            <div class="weather__city">-----</div>
+            <div><span class="weather__temp-fahrenheit">---</span> &deg;F</div>
+            <div><span class="weather__temp-celsius">---</span> &deg;C</div>
+          </div>
+          <img
+            class="weather__image"
+            src="https://openweathermap.org/img/wn/03d@2x.png"
+            alt="scattered clouds"
+          />
+          <div>
+            <div>Humidity: <span class="weather__humidity">---</span> %</div>
+            <div>Pressure: <span class="weather__pressure">---</span> mBar</div>
+            <div>
+              Wind: <span class="weather__wind-deg"> &uarr; </span
+              ><span class="weather__wind">---</span> m/s
+            </div>
+          </div>
+        </div>
+        <input
+          class="search-panel__input"
+          type="text"
+          id="search-panel__input"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="countries__view"></div>
+      <div id="map"></div>
+    </div>
+  </body>
+</html>
