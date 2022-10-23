@@ -1,7 +1,7 @@
 <ul class="countries__list">
   {{#each this}}
-  <li data-alfa3code="{{this.alpha3Code}}">{{this.name}} - {{this.nativeName}}
-    <img class="countries__flag" src="{{this.flag}}" alt="{{this.name}}">
+  <li data-alfa3code="{{this.ccn3}}">{{this.name.official}}
+    <img class="countries__flag" src="{{this.flags.png}}" alt="{{this.name.official}}">
   </li>
   {{/each}}
 </ul>

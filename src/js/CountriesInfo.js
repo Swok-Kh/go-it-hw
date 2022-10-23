@@ -65,14 +65,19 @@ export class CountriesInfo {
   _showListOfCountries(countries) {
     this._render(countriesListTemplate(countries));
   }
+  _transformCountry (country){
+    const languages = Object.values(country.languages)
+
+    return {...country, languages}
+  }
   _showOneCountry(country) {
-    this._render(countryTemplate(country));
+    this._render(countryTemplate(this._transformCountry(country)));
     this._writeCurrent(country);
   }
   _showRandomCountry(countries) {
     notifyHandler('Showed random country', 'notice', ';-)');
     const country = countries[Math.round(Math.random() * countries.length - 1)];
-    this._render(countryTemplate(country), 500);
+    this._render(countryTemplate(this._transformCountry(country)), 500);
     this._writeCurrent(country);
   }
   _writeCurrent(country) {
