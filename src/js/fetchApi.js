@@ -1,15 +1,15 @@
 export function fetchCountries(searchQuery) {
   return fetch(
-    `https://restcountries.eu/rest/v2/name/${searchQuery}`,
+    `https://restcountries.com/v3.1/name/${searchQuery}`,
   ).then(response => response.json());
 }
 export function fetchCountryByCode(searchQuery) {
   return fetch(
-    `https://restcountries.eu/rest/v2/alpha/${searchQuery}`,
+    `https://restcountries.com/v3.1/alpha/${searchQuery}`,
   ).then(response => response.json());
 }
 export function fetchAllCountries() {
-  return fetch('https://restcountries.eu/rest/v2/all').then(response =>
+  return fetch('https://restcountries.com/v3.1/all').then(response =>
     response.json(),
   );
 }
